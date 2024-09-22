@@ -14,7 +14,7 @@ jobs:
       run: echo "Hello, world!" > hello.txt
 
     - name: Archive text file
-      uses: actions/upload-artifact@v3.2.1-node20
+      uses: actions/upload-artifact@v3
       with:
         name: hello-artifact
         path: hello.txt
@@ -23,7 +23,7 @@ jobs:
     needs: build
     steps:
     - name: Download a Build Artifact
-      uses: actions/download-artifact@v4.1.8
+      uses: actions/download-artifact@v3
       with:
         path: ./artifacts/
     - name: cat the file
